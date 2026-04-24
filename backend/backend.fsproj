@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Models/Types.fs" />
+    <Compile Include="Services/Matcher.fs" />
+    <Compile Include="Controllers/MyController.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
