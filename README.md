@@ -517,9 +517,7 @@ This project was built by referring to the following official documentation. If 
 | [JSON Serialization](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/overview) | Fix the `item1`/`item2` tuple issue |
 
 
----
 
-> 💡 **Tip for beginners:** Start with the [F# Tour](https://learn.microsoft.com/en-us/dotnet/fsharp/tour) to get the lay of the land, then work through [F# for Fun and Profit](https://fsharpforfunandprofit.com/) alongside building your own project. Reading docs is most effective when you have a real problem to solve.
 ---
 
 ## 📚 What I Learned
