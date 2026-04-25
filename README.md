@@ -316,7 +316,7 @@ type NGO = {
 }
 ```
 
-No class. No `new`. No constructor. No `public` keyword. Records are immutable by default — you can't accidentally change a field after creation. To "update" a record you create a copy with `{ ngo with Name = "New Name" }`.
+No class. No `new`. No constructor. No `public` keyword. Records are immutable by default, you can't accidentally change a field after creation. To "update" a record you create a copy with `{ ngo with Name = "New Name" }`.
 
 ### 2. The Pipeline Operator `|>`
 
@@ -355,7 +355,7 @@ fun (ngo, score) -> score
 //   ^^^^^^^^^^^  destructured directly in the parameter
 ```
 
-Tuples are a built-in F# type. You can unpack them directly in function parameters, `let` bindings, and pattern matches — no intermediate variable needed.
+Tuples are a built-in F# type. You can unpack them directly in function parameters, `let` bindings, and pattern matches no intermediate variable needed.
 
 ### 6. Strong Type Inference
 
@@ -485,25 +485,41 @@ F# has a strict module system. Using a function from another file requires eithe
 
 ---
 
-## ⚠️ Current Limitations & Roadmap
+---
 
-The scoring logic is intentionally simple right now:
+## 📖 Official Resources & Further Reading
 
-```fsharp
-if ngo.Category = issue then 10 else 1
-```
+This project was built by referring to the following official documentation. If you want to go deeper on any part of the stack, these are the best places to start:
 
-Only exact category matches score high. Everything else scores 1. Planned improvements:
+### Core Technologies
 
-- [ ] **Better matching** - keyword scoring, partial matches, synonyms
-- [ ] **Real database** - replace hardcoded NGO list with SQLite or PostgreSQL
-- [ ] **Named DTOs** - fix `item1`/`item2` JSON serialization
-- [ ] **Unit tests** - test `scoreMatch` and `matchNGOs` with xUnit
-- [ ] **More NGO data** - expand beyond the initial dataset
-- [ ] **Semantic search** - TF-IDF or embedding-based matching
-- [ ] **Docker** - containerize both frontend and backend
-- [ ] **CI/CD** - GitHub Actions pipeline for build and test
+| Resource | URL |
+|---|---|
+| **.NET Documentation** | https://learn.microsoft.com/en-us/dotnet/ |
+| **F# Official Docs** | https://learn.microsoft.com/en-us/dotnet/fsharp/ |
+| **ASP.NET Core Web API** | https://learn.microsoft.com/en-us/aspnet/core/web-api/ |
 
+### F# Learning Path 
+
+| Resource | What You'll Learn |
+|---|---|
+| [F# Tour](https://learn.microsoft.com/en-us/dotnet/fsharp/tour) | Quick overview of all major F# features |
+| [F# for Fun and Profit](https://fsharpforfunandprofit.com/) | Deep, practical F# — best free resource available |
+| [F# Cheatsheet](https://dungpa.github.io/fsharp-cheatsheet/) | Quick syntax reference |
+| [Exercism F# Track](https://exercism.org/tracks/fsharp) | Hands-on practice with community feedback |
+
+### ASP.NET Core
+
+| Resource | What You'll Learn |
+|---|---|
+| [Minimal APIs Overview](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis) | The approach used in this project |
+| [CORS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors) | Why CORS matters and how to configure it |
+| [JSON Serialization](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/overview) | Fix the `item1`/`item2` tuple issue |
+
+
+---
+
+> 💡 **Tip for beginners:** Start with the [F# Tour](https://learn.microsoft.com/en-us/dotnet/fsharp/tour) to get the lay of the land, then work through [F# for Fun and Profit](https://fsharpforfunandprofit.com/) alongside building your own project. Reading docs is most effective when you have a real problem to solve.
 ---
 
 ## 📚 What I Learned
@@ -511,8 +527,7 @@ Only exact category matches score high. Everything else scores 1. Planned improv
 **Backend concepts:**
 - Designing a REST API from scratch - routing, request/response lifecycle, status codes
 - How JSON serialization works and where it fails (F# tuples)
-- What CORS is, why it exists, and how to configure it
-- ASP.NET Core startup pipeline — builder, middleware, and app
+- ASP.NET Core startup pipeline - builder, middleware, and app
 
 **F# / Functional programming:**
 - Immutability as a default, not an afterthought
@@ -521,12 +536,6 @@ Only exact category matches score high. Everything else scores 1. Planned improv
 - Type inference - how the compiler figures out types from context
 - Why file order matters and how to structure a compiled F# project
 - Anonymous functions with `fun`
-
-**Full-stack integration:**
-- How client-server communication works at the HTTP level
-- Debugging with the browser DevTools Network tab alongside backend logs
-- Handling async data in React - `useState`, `useEffect`, loading and error states
-- Why you should always test the API directly (with `curl`) before debugging the frontend
 
 **Real-world debugging:**
 - Reading compiler errors carefully - F# errors often point at the symptom, not the cause
